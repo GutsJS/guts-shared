@@ -4,11 +4,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "UNLICENSED",
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@github.com:TylerAHolden/lionne-shared.git",
-    "directory": "@tyleraholden/lionne-shared"
-  },
+  "repository": "git://git@github.com:tyleraholden/lionne-shared.git",
   "files": [
     "dist"
   ],

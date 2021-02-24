@@ -1,0 +1,40 @@
+{
+  "name": "@tyleraholden/lionne-shared",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:TylerAHolden/lionne-shared.git",
+    "directory": "@tyleraholden/lionne-shared"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "build-website": "yarn build",
+    "build-app": "yarn build",
+    "clean": "rm -f tsconfig.tsbuildinfo && rimraf -rf ./dist",
+    "compile": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch --preserveWatchOutput",
+    "serve": "yarn compile && yarn watch",
+    "prepublishOnly": "yarn run build",
+    "test": "yarn run build",
+    "publish-types": "npm version patch && npm publish"
+  },
+  "dependencies": {
+    "libphonenumber-js": "^1.9.8",
+    "slate": "^0.59.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.0",
+    "firebase": "^7.15.5",
+    "typescript": "^4.1.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@TylerAHolden"
+  }
+}

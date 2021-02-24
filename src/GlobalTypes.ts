@@ -231,6 +231,7 @@ export type Review_FirestoreDoc = {
   name: string;
   rating: number;
   ts: firebase.firestore.Timestamp;
+  showcase?: 1 | 2 | 3;
 };
 
 export type Customer = User & {};

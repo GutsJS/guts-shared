@@ -14,15 +14,13 @@
   ],
   "scripts": {
     "build": "yarn clean && yarn compile",
-    "build-website": "yarn build",
-    "build-app": "yarn build",
     "clean": "rm -f tsconfig.tsbuildinfo && rimraf -rf ./dist",
     "compile": "tsc -p tsconfig.json",
     "watch": "tsc -p tsconfig.json --watch --preserveWatchOutput",
     "serve": "yarn compile && yarn watch",
     "prepublishOnly": "yarn run build",
     "test": "yarn run build",
-    "publish-types": "npm version patch && npm publish"
+    "deploy": "npm version patch && npm publish"
   },
   "dependencies": {
     "libphonenumber-js": "^1.9.8",
@@ -32,6 +30,7 @@
   "devDependencies": {
     "@types/uuid": "^8.3.0",
     "firebase": "^7.15.5",
+    "rimraf": "^3.0.2",
     "typescript": "^4.1.3"
   },
   "publishConfig": {

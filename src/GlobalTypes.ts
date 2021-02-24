@@ -222,12 +222,15 @@ export type Consultation = {
 
 export type Review = {
   id: string;
+} & Review_FirestoreDoc;
+
+export type Review_FirestoreDoc = {
   body: string;
   consultant_id: string;
   customer_id: string;
   name: string;
   rating: number;
-  ts: Date;
+  ts: firebase.firestore.Timestamp;
 };
 
 export type Customer = User & {};

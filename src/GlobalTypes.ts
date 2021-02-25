@@ -230,6 +230,7 @@ export type Review_FirestoreDoc = {
   customer_id: string;
   name: string;
   rating: number;
+  image: string;
   ts: firebase.firestore.Timestamp;
   showcase?: 1 | 2 | 3;
 };

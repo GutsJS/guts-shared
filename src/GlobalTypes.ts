@@ -293,12 +293,14 @@ export type TimeOfDay = typeof TimeOfDay[number];
 export const PaletteColors = ['primary', 'secondary', 'tertiary'];
 
 export const Colors = [
-  'ocean',
-  'gold',
-  'blue',
-  'blush',
   'green',
-  'skin',
+  'gold',
+  'sienna',
+  'cream',
+  'taupe',
+  'pink',
+  'light',
+  'blue',
   'text',
   'paragraph',
   'success',
@@ -306,6 +308,5 @@ export const Colors = [
   'danger',
   'dark',
   'medium',
-  'light',
   'white',
 ];

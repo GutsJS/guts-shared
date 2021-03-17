@@ -130,6 +130,9 @@ export type PersonalizedProductFields = {
   notes?: string;
   selected_product_link?: string;
   quantity?: number;
+  regimenMorningOrder?: number;
+  regimenEveningOrder?: number;
+  regimenBoosterOrder?: number;
 };
 
 export type DatabaseShoppingCart = {

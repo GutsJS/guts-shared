@@ -9,7 +9,9 @@ export type SystemNotification = {
   requireCheck?: boolean;
   foreign_id?: string;
   recipients?: 'owners' | 'admins' | 'subject' | 'subject-consultant';
-  sendEmail?: boolean;
+  sendEmail?:
+    | boolean
+    | { template: string; dynamicData: { [key: string]: string } };
 };
 
 export const NotificationEvents = [

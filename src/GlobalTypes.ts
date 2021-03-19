@@ -196,6 +196,7 @@ export type Invoice = {
       productLinkId: string;
       quantity: number;
       price: number;
+      trackingNumber?: string;
     };
   };
   baseFee: number;

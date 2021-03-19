@@ -170,8 +170,38 @@ export type UserBase = {
   last_login?: firebase.firestore.Timestamp;
   next_consultation_ref: firebase.firestore.DocumentReference;
   profile_visibility?: ProfileVisibility;
+  address?: AddressObj;
+  shoppingCartConfirmed?: boolean;
 } & {
   [key in UserProperties]?: string[];
+};
+
+export type AddressObj = {
+  address?: string;
+  addressLine2?: string;
+  addressLine3?: string;
+  city?: string;
+  state?: string;
+  postcode?: string;
+  country?: string;
+  placeId?: string;
+};
+
+export type Invoice = {
+  shippingAddress: AddressObj;
+  currency: Currencies;
+  paymentMethodId: string;
+  products: {
+    [key: string]: {
+      productLinkId: string;
+      quantity: number;
+      price: number;
+    };
+  };
+  baseFee: number;
+  totalPrice: number;
+  readyForCharge: boolean;
+  charged: boolean;
 };
 
 export const ProfileVisibility = ['private', 'public'] as const;

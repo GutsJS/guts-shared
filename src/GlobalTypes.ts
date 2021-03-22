@@ -203,7 +203,7 @@ export type Invoice = {
   baseFee: number;
   totalPrice: number;
   readyForCharge: boolean;
-  charged: boolean;
+  stripePaymentId: string | undefined;
 };
 
 export const ProfileVisibility = ['private', 'public'] as const;

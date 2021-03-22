@@ -172,6 +172,7 @@ export type UserBase = {
   profile_visibility?: ProfileVisibility;
   address?: AddressObj;
   shoppingCartConfirmed?: boolean;
+  openInvoice?: firebase.firestore.DocumentReference;
 } & {
   [key in UserProperties]?: string[];
 };

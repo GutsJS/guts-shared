@@ -173,6 +173,8 @@ export type UserBase = {
   address?: AddressObj;
   shoppingCartConfirmed?: boolean;
   openInvoice?: firebase.firestore.DocumentReference;
+  membershipStartDate?: firebase.firestore.Timestamp;
+  membershipMonths?: number;
 } & {
   [key in UserProperties]?: string[];
 };

@@ -175,6 +175,7 @@ export type UserBase = {
   openInvoice?: firebase.firestore.DocumentReference;
   membershipStartDate?: firebase.firestore.Timestamp;
   membershipMonths?: number;
+  forceLogout?: boolean;
 } & {
   [key in UserProperties]?: string[];
 };

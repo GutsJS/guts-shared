@@ -224,7 +224,6 @@ export type Consultant = {
   is_consultant: boolean;
   requires_review?: boolean;
   default_intro_chat_message?: string;
-  services_offered?: string[];
   specialty_skills: { [key in UserProperties]?: string[] };
   average_rating?: number;
   work_hours: WorkHours;

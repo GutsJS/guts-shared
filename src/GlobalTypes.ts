@@ -207,6 +207,7 @@ export type Invoice = {
   baseFee: number;
   totalPrice: number;
   readyForCharge: boolean;
+  skinProfileVersion: string;
   stripePaymentId?: string | undefined;
 };
 

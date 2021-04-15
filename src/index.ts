@@ -10,3 +10,4 @@ export * from './NotificationSystem';
 export * from './API';
 export * from './Constants';
 export * from './TaskRunner';
+export * from './SkinProfile';

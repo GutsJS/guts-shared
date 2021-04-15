@@ -173,6 +173,7 @@ export type UserBase = {
   address?: AddressObj;
   shoppingCartConfirmed?: boolean;
   openInvoice?: firebase.firestore.DocumentReference;
+  liveSkinProfile?: firebase.firestore.DocumentReference;
   membershipStartDate?: firebase.firestore.Timestamp;
   membershipMonths?: number;
   forceLogout?: boolean;

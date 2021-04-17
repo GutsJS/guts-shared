@@ -1,5 +1,4 @@
 import { Node } from 'slate';
-import { User } from './GlobalTypes';
 import { firestore } from 'firebase';
 import { v4 as uuid } from 'uuid';
 
@@ -61,8 +60,6 @@ export class BasicBlock implements BasicBlockType {
     };
   }
 
-  variablesToReplace(user?: User) {}
-
   new(...args: any): BasicBlock {
     throw new Error(
       'New function not provided. Cannot create new instance of unknown default.'
@@ -87,6 +84,5 @@ export type BasicBlockTypeForDatabase = {
 };
 
 export type DefaultBlockListableType = {
-  variablesToReplace?: (user?: User) => void;
   previewHeight: number;
 };

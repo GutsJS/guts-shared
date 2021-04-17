@@ -148,8 +148,6 @@ export type UserBase = {
   first_name?: string;
   last_name?: string;
   email?: string;
-  regimen_live?: SkincareRegimen;
-  regimen?: SkincareRegimen;
   consultant_id?: string;
   avatar?: string;
   avatar_400x400?: string;
@@ -159,8 +157,6 @@ export type UserBase = {
   is_admin?: boolean;
   stripe_customer_id?: string;
   consultant_private_notes?: string;
-  shopping_cart_live?: DatabaseShoppingCart;
-  shopping_cart?: DatabaseShoppingCart;
   preferred_brands?: string[];
   currency?: Currencies;
   country_code?: CountryCode;
@@ -171,7 +167,6 @@ export type UserBase = {
   next_consultation_ref: firebase.firestore.DocumentReference;
   profile_visibility?: ProfileVisibility;
   address?: AddressObj;
-  shoppingCartConfirmed?: boolean;
   openInvoice?: firebase.firestore.DocumentReference;
   liveSkinProfile?: firebase.firestore.DocumentReference;
   membershipStartDate?: firebase.firestore.Timestamp;

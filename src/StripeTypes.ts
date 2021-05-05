@@ -1,4 +1,4 @@
-import { Currencies } from './GlobalTypes';
+import { Currencies, PriceLevels } from './GlobalTypes';
 
 export type CreditCardTypes =
   | 'Visa'
@@ -25,5 +25,6 @@ export type Service = {
 export type Price = {
   id: string;
   currency: Currencies;
+  price_level: PriceLevels;
   unit_amount: number;
 };

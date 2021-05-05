@@ -94,9 +94,6 @@ export type ProductLinkWithoutID = {
 export const Currencies = ['USD', 'GBP'] as const;
 export type Currencies = typeof Currencies[number];
 
-export const PriceLevels = [1, 2, 3, 4] as const;
-export type PriceLevels = typeof PriceLevels[number];
-
 export type CurrencySymbols = '$' | '£';
 
 export const CurrencyToSymbol: { [key in Currencies]: CurrencySymbols } = {
@@ -217,7 +214,7 @@ export type ClientRelationship = {
 export type Consultant = {
   bio?: string;
   passed_training?: boolean;
-  price_level: PriceLevels;
+  price_modifier_multiple?: number;
   is_consultant: boolean;
   requires_review?: boolean;
   default_intro_chat_message?: string;

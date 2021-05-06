@@ -224,6 +224,7 @@ export type Consultant = {
   specialty_skills: { [key in UserProperties]?: string[] };
   average_rating?: number;
   work_hours: WorkHours;
+  minimumAvailabilityNoticeInHours?: number;
 } & UserBase;
 
 export type WorkHours = {

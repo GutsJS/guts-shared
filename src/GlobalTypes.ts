@@ -253,6 +253,7 @@ export type Consultation = {
   google_calendar_link?: string;
   time: firebase.firestore.Timestamp;
   service_id: string;
+  paymentId?: string;
 };
 
 export type Review = {

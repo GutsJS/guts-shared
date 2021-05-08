@@ -1,4 +1,5 @@
 import { NotificationEvents } from './NotificationSystem';
+import Stripe from 'stripe';
 import { User } from './GlobalTypes';
 
 export type APIRequest = {
@@ -20,12 +21,20 @@ export type CreateCalendarEventRequest = APIRequest & {
   actor: 'consultant' | 'client';
 };
 
+export type ScheduleConsultationEventRequest = APIRequest & {
+  time: string;
+  clientId: string;
+  consultantId: string;
+  serviceId: string;
+  actor: 'consultant' | 'client';
+};
+
 export type CreateCalendarEventFunction = {
   consultant: User;
   client: User;
   time: string;
   consultationId: string;
-  serviceId: string;
+  service: Stripe.Product;
   actor: 'consultant' | 'client';
 };
 

@@ -11,3 +11,4 @@ export * from './API';
 export * from './Constants';
 export * from './TaskRunner';
 export * from './SkinProfile';
+export * from './utilFunctions/getPriceFromService';

@@ -25,7 +25,9 @@ export type ScheduleConsultationEventRequest = APIRequest & {
   time: string;
   clientId: string;
   consultantId: string;
+  idToken: string;
   serviceId: string;
+  paymentMethodId: string;
   actor: 'consultant' | 'client';
 };
 

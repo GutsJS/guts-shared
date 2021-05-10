@@ -28,6 +28,7 @@ export type ScheduleConsultationEventRequest = APIRequest & {
   idToken: string;
   serviceId: string;
   paymentMethodId: string;
+  promotionCodeId: string | undefined;
   actor: 'consultant' | 'client';
 };
 

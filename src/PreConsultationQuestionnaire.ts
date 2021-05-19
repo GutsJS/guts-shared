@@ -24,6 +24,7 @@ export namespace PreConsultationQuestionnaire {
     [key in typeof FormSlugs[number]]?: {
       other?: string;
       answers?: string[];
+      question?: string;
     };
   };
 }

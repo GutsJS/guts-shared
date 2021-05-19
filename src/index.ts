@@ -13,3 +13,4 @@ export * from './TaskRunner';
 export * from './SkinProfile';
 export * from './utilFunctions/getPriceFromService';
 export * from './PreConsultationQuestionnaire';
+export * from './Form';

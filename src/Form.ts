@@ -8,3 +8,9 @@ export type Form = {
   name: string;
   responses: PreConsultationQuestionnaire.Responses;
 };
+
+export type FormResponseField = {
+  other?: string;
+  answers?: string[];
+  question?: string;
+};

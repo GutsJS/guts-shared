@@ -1,3 +1,5 @@
+import { FormResponseField } from './Form';
+
 export namespace PreConsultationQuestionnaire {
   export const FormSlugs = [
     'intro',
@@ -21,10 +23,6 @@ export namespace PreConsultationQuestionnaire {
   ] as const;
 
   export type Responses = {
-    [key in typeof FormSlugs[number]]?: {
-      other?: string;
-      answers?: string[];
-      question?: string;
-    };
+    [key in typeof FormSlugs[number]]?: FormResponseField;
   };
 }

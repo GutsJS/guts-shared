@@ -3,7 +3,6 @@ import { FormResponseField } from './Form';
 export namespace PreConsultationQuestionnaire {
   export const FormSlugs = [
     'intro',
-    'consent',
     'information',
     'motivation',
     'motivation-message',

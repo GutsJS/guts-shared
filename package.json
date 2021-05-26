@@ -19,6 +19,7 @@
     "deploy": "npm version patch && npm publish"
   },
   "dependencies": {
+    "date-fns": "^2.21.3",
     "libphonenumber-js": "^1.9.8",
     "slate": "^0.59.0",
     "stripe": "^8.148.0",

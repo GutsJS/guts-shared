@@ -6,7 +6,7 @@ import { firestore } from 'firebase';
 export type SkinProfile = {
   version: string;
   shoppingCart: DatabaseShoppingCart;
-  regimen: SkincareRegimen;
+  regimen: SkincareRegimen; // @TODO remove LIO-256
   shoppingCartConfirmed: boolean;
   publishedAt?: firestore.Timestamp;
   skinProfileBlocks: BasicBlockType[];

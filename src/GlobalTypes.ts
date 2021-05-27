@@ -29,7 +29,8 @@ export const ProductSpecificProperties = [
   'mineral_or_chemical',
   'level',
 ] as const;
-export type ProductSpecificProperties = typeof ProductSpecificProperties[number];
+export type ProductSpecificProperties =
+  typeof ProductSpecificProperties[number];
 
 export const ProductProperties = [
   ...BaseProperties,
@@ -127,12 +128,54 @@ export type Product = {
 };
 
 export type PersonalizedProductFields = {
-  notes?: string;
+  notes?: string; // @TODO remove LIO-256
+  regimenBoosterOrder?: number; // @TODO remove LIO-256
+  regimenMorningOrder?: number; // @TODO remove LIO-256
+  regimenEveningOrder?: number; // @TODO remove LIO-256
+
   selected_product_link?: string;
   quantity?: number;
-  regimenMorningOrder?: number;
-  regimenEveningOrder?: number;
-  regimenBoosterOrder?: number;
+  prideority?: 1 | 2 | 3;
+
+  morning?: ProductClassificationOptions;
+  evening?: ProductClassificationOptions;
+  holisticItem?: ProductClassificationOptions;
+};
+
+export type ProductClassificationOptions = {
+  description?: string;
+  usage?: ProductUsage;
+  isBooster?: boolean;
+  regimeOrder?: number;
+  alternativeProducts?: AlternativeProduct[];
+};
+
+export type AlternativeProduct = {
+  id: string;
+  title: string;
+};
+
+export const RepeatingBasis = ['none', 'weekly', 'daily'] as const;
+export type RepeatingBasis = typeof RepeatingBasis[number];
+
+export type ProductUsage = {
+  notes?: string;
+  non_repeating_dates?: { [date: string]: string };
+} & (WeeklyRepeatingOptions | DailyRepeatingOptions | NoRepeatingOptions);
+
+export type WeeklyRepeatingOptions = {
+  repeating_basis: 'weekly';
+  repeating_options?: { [key in DaysOfTheWeek]?: boolean };
+};
+
+export type DailyRepeatingOptions = {
+  repeating_basis: 'daily';
+  repeating_options?: { startDate: string; frequency: number };
+};
+
+export type NoRepeatingOptions = {
+  repeating_basis: 'none';
+  repeating_options?: undefined;
 };
 
 export type DatabaseShoppingCart = {

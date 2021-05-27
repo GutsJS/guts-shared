@@ -158,6 +158,11 @@ export type AlternativeProduct = {
 export const RepeatingBasis = ['none', 'weekly', 'daily'] as const;
 export type RepeatingBasis = typeof RepeatingBasis[number];
 
+export const ProductsPerDayLimiter = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+] as const;
+export type ProductsPerDayLimiter = typeof ProductsPerDayLimiter[number];
+
 export type ProductUsage = {
   notes?: string;
   non_repeating_dates?: { [date: string]: string };
@@ -165,12 +170,16 @@ export type ProductUsage = {
 
 export type WeeklyRepeatingOptions = {
   repeating_basis: 'weekly';
-  repeating_options?: { [key in DaysOfTheWeek]?: boolean };
+  repeating_options?: { [key in DaysOfTheWeek]?: ProductsPerDayLimiter };
 };
 
 export type DailyRepeatingOptions = {
   repeating_basis: 'daily';
-  repeating_options?: { startDate: string; frequency: number };
+  repeating_options?: {
+    startDate: string;
+    interval: number;
+    step: ProductsPerDayLimiter;
+  };
 };
 
 export type NoRepeatingOptions = {

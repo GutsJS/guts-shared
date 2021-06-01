@@ -26,7 +26,6 @@ export const NotificationEvents = [
   'skin-profile-publish-reminder-4-day',
   'review-created',
   'client-confirmed-product-selection',
-  'invoice-finalized',
   'client-invoice-charged',
 ] as const;
 export type NotificationEvents = typeof NotificationEvents[number];

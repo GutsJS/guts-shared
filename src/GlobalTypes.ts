@@ -136,6 +136,7 @@ export type PersonalizedProductFields = {
   selected_product_link?: string;
   quantity?: number;
   prideority?: 1 | 2 | 3;
+  purchased?: boolean; // LIO-281
 
   morning?: ProductClassificationOptions;
   evening?: ProductClassificationOptions;
@@ -246,9 +247,10 @@ export type Invoice = {
   products: {
     [key: string]: {
       productLinkId: string;
-      quantity: number;
+      quantity: number; // only here for statistic tracking
       price: number;
       trackingNumber?: string;
+      estimatedPrice: string;
     };
   };
   baseFee: number;

@@ -254,6 +254,7 @@ export type Invoice = {
     };
   };
   baseFee: number;
+  estimatedTotalPrice: string;
   totalPrice: number;
   skinProfileVersion: string;
   stripePaymentId?: string | undefined;

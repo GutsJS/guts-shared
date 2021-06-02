@@ -225,6 +225,7 @@ export type UserBase = {
   membershipStartDate?: firebase.firestore.Timestamp;
   membershipMonths?: number;
   forceLogout?: boolean;
+  birthYear?: number;
 } & {
   [key in UserProperties]?: string[];
 };

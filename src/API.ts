@@ -10,6 +10,9 @@ export type TriggerNotificationAPIRequest = APIRequest & {
   subjectUserId: string;
   idToken: string;
   notificationEvent: NotificationEvents;
+  dynamicData?: {
+    [key: string]: any;
+  };
 };
 
 export type CreateCalendarEventRequest = APIRequest & {

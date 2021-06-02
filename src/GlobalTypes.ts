@@ -250,11 +250,9 @@ export type Invoice = {
       quantity: number; // only here for statistic tracking
       price: number;
       trackingNumber?: string;
-      estimatedPrice: string;
     };
   };
   baseFee: number;
-  estimatedTotalPrice: string;
   totalPrice: number;
   skinProfileVersion: string;
   stripePaymentId?: string | undefined;

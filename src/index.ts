@@ -14,6 +14,7 @@ export * from './SkinProfile';
 export * from './utilFunctions/getPriceFromService';
 export * from './utilFunctions/slugify';
 export * from './utilFunctions/checkCouponValidity';
+export * from './utilFunctions/MapOfSpecialSkinMentorLinksToBookingPage';
 export * from './utilFunctions/priceToString';
 export * from './PreConsultationQuestionnaire';
 export * from './Form';

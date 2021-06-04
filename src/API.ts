@@ -6,9 +6,12 @@ export type APIRequest = {
   devMode?: boolean;
 };
 
-export type TriggerNotificationAPIRequest = APIRequest & {
-  subjectUserId: string;
+export type AuthenticatedAPIRequest = APIRequest & {
   idToken: string;
+};
+
+export type TriggerNotificationAPIRequest = AuthenticatedAPIRequest & {
+  subjectUserId: string;
   notificationEvent: NotificationEvents;
   dynamicData?: {
     [key: string]: any;
@@ -24,11 +27,10 @@ export type CreateCalendarEventRequest = APIRequest & {
   actor: 'consultant' | 'client';
 };
 
-export type ScheduleConsultationEventRequest = APIRequest & {
+export type ScheduleConsultationEventRequest = AuthenticatedAPIRequest & {
   time: string;
   clientId: string;
   consultantId: string;
-  idToken: string;
   serviceId: string;
   paymentMethodId: string;
   promotionCodeId: string | undefined;
@@ -49,7 +51,7 @@ export type UpdateCalendarEventRequest = CreateCalendarEventRequest & {
   video_link: string;
 };
 
-export type DeleteCalendarEventRequest = APIRequest & {
+export type DeleteCalendarEventRequest = AuthenticatedAPIRequest & {
   calendarEventId: string;
   consultantId: string;
   clientId: string;

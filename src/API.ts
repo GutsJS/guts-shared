@@ -19,21 +19,12 @@ export type TriggerNotificationAPIRequest = AuthenticatedAPIRequest & {
   };
 };
 
-export type ScheduleConsultationRequest = AuthenticatedAPIRequest & {
-  time: string;
-  consultationId: string;
-  clientId: string;
-  consultantId: string;
-  serviceId: string;
-  actor: 'consultant' | 'client';
-};
-
 export type ScheduleConsultationEventRequest = AuthenticatedAPIRequest & {
   time: string;
   clientId: string;
   consultantId: string;
   serviceId: string;
-  paymentMethodId: string;
+  paymentMethodId: string | undefined;
   promotionCodeId: string | undefined;
   actor: 'consultant' | 'client';
 };

@@ -306,6 +306,7 @@ export type Consultation = {
   time: firebase.firestore.Timestamp;
   service_id: string;
   paymentId?: string;
+  isPrevious?: boolean; // means that the consultation has already happened (probably on previous scheduling platform - acuity)
 };
 
 export type Review = {

@@ -26,6 +26,7 @@ export type ScheduleConsultationEventRequest = AuthenticatedAPIRequest & {
   serviceId: string;
   paymentMethodId: string | undefined;
   promotionCodeId: string | undefined;
+  isPrevious?: boolean;
   actor: 'consultant' | 'client';
 };
 

@@ -1,6 +1,7 @@
+import { Consultation, User } from './GlobalTypes';
+
 import { NotificationEvents } from './NotificationSystem';
 import { Service } from './StripeTypes';
-import { User } from './GlobalTypes';
 
 export type APIRequest = {
   devMode?: boolean;
@@ -46,9 +47,8 @@ export type CreateCalendarEventFunction = {
   actor: 'consultant' | 'client';
 };
 
-export type UpdateCalendarEventRequest = ScheduleConsultationRequest & {
-  eventId: string;
-  video_link: string;
+export type UpdateCalendarEventRequest = AuthenticatedAPIRequest & {
+  consultation: Consultation;
 };
 
 export type DeleteCalendarEventRequest = AuthenticatedAPIRequest & {

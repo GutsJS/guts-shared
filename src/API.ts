@@ -18,7 +18,7 @@ export type TriggerNotificationAPIRequest = AuthenticatedAPIRequest & {
   };
 };
 
-export type CreateCalendarEventRequest = APIRequest & {
+export type ScheduleConsultationRequest = AuthenticatedAPIRequest & {
   time: string;
   consultationId: string;
   clientId: string;
@@ -46,7 +46,7 @@ export type CreateCalendarEventFunction = {
   actor: 'consultant' | 'client';
 };
 
-export type UpdateCalendarEventRequest = CreateCalendarEventRequest & {
+export type UpdateCalendarEventRequest = ScheduleConsultationRequest & {
   eventId: string;
   video_link: string;
 };

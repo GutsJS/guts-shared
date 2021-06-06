@@ -11,12 +11,16 @@ export const checkCouponValidity = async (
     throw new Error('No promotion code found');
   } else {
     if (promotionCode.expires_at) {
-      if (isBefore(new Date(promotionCode.expires_at), new Date())) {
+      // Stripes timestamps are in seconds not milliseconds for some reason
+      if (isBefore(new Date(promotionCode.expires_at * 1000), new Date())) {
         throw new Error('Promotion Code Expired');
       }
     }
     if (promotionCode.coupon.redeem_by) {
-      if (isBefore(new Date(promotionCode.coupon.redeem_by), new Date())) {
+      if (
+        // Stripes timestamps are in seconds not milliseconds for some reason
+        isBefore(new Date(promotionCode.coupon.redeem_by * 1000), new Date())
+      ) {
         throw new Error('Promotion Code Expired');
       }
     }

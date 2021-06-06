@@ -4,7 +4,9 @@ import { isBefore } from 'date-fns';
 
 export const checkCouponValidity = async (
   promotionCode: Stripe.PromotionCode | undefined,
-  userDocRef: firebase.firestore.DocumentReference<firebase.firestore.DocumentData>,
+  userDocRef:
+    | firebase.firestore.DocumentReference<firebase.firestore.DocumentData>
+    | undefined,
   serviceSlug: string | undefined
 ) => {
   if (!promotionCode) {
@@ -32,7 +34,7 @@ export const checkCouponValidity = async (
         throw new Error('Promotion Code has hit the redeem limit');
       }
     }
-    if (promotionCode.restrictions.first_time_transaction) {
+    if (userDocRef && promotionCode.restrictions.first_time_transaction) {
       const previousConsultations = await userDocRef
         .collection('consultations')
         .get();

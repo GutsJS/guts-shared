@@ -1,5 +1,5 @@
 import { Service } from '../StripeTypes';
-import { User } from '../GlobalTypes';
+import { User } from '../User';
 
 export const getPriceFromService = (service: Service, skinMentor: User) => {
   if (!service) return null;

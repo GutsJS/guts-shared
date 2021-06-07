@@ -1,7 +1,7 @@
-import { Consultation, User } from './GlobalTypes';
-
+import { Consultation } from './GlobalTypes';
 import { NotificationEvents } from './NotificationSystem';
 import { Service } from './StripeTypes';
+import { User } from './User';
 
 export type APIRequest = {
   devMode?: boolean;

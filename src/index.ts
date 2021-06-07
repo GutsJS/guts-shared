@@ -18,3 +18,4 @@ export * from './utilFunctions/MapOfSpecialSkinMentorLinksToBookingPage';
 export * from './utilFunctions/priceToString';
 export * from './PreConsultationQuestionnaire';
 export * from './Form';
+export * from './User';

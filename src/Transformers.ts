@@ -1,7 +1,7 @@
 import * as firebase from 'firebase';
 
-import { Product, User } from './GlobalTypes';
-
+import { Product } from './GlobalTypes';
+import { User } from './User';
 import { getResizedImageURI } from './utils';
 
 export const transformProduct = async (

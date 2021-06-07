@@ -1,23 +1,12 @@
-import * as firebase from 'firebase/app';
-
 import {
   AddressObj,
-  BaseProperties,
   Currencies,
   DaysOfWeekInStringNumbers,
   PriceLevels,
+  UserProperties,
 } from './GlobalTypes';
 
 import { CountryCode } from 'libphonenumber-js';
-
-export const UserSpecificProperties = [] as const;
-export type UserSpecificProperties = typeof UserSpecificProperties[number];
-
-export const UserProperties = [
-  ...BaseProperties,
-  ...UserSpecificProperties,
-] as const;
-export type UserProperties = typeof UserProperties[number];
 
 export const ProfileVisibility = ['private', 'public'] as const;
 export type ProfileVisibility = typeof ProfileVisibility[number];

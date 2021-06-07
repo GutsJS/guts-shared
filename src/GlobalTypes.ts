@@ -1,7 +1,6 @@
 import * as firebase from 'firebase/app';
 
 import { Service } from './StripeTypes';
-import { UserSpecificProperties } from './User';
 
 export type Types = {
   [key in AllTypes]: TypeObject;
@@ -15,6 +14,15 @@ export const BaseProperties = [
   'skin_mood',
 ] as const;
 export type BaseProperties = typeof BaseProperties[number];
+
+export const UserSpecificProperties = [] as const;
+export type UserSpecificProperties = typeof UserSpecificProperties[number];
+
+export const UserProperties = [
+  ...BaseProperties,
+  ...UserSpecificProperties,
+] as const;
+export type UserProperties = typeof UserProperties[number];
 
 export const ProductSpecificProperties = [
   'highlighted_ingredients',

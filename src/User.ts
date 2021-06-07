@@ -8,6 +8,18 @@ import {
 
 import { CountryCode } from 'libphonenumber-js';
 
+export const UserSpecificProperties = [] as const;
+export type UserSpecificProperties = typeof UserSpecificProperties[number];
+
+export const UserProperties = [
+  ...BaseProperties,
+  ...UserSpecificProperties,
+] as const;
+export type UserProperties = typeof UserProperties[number];
+
+export const ProfileVisibility = ['private', 'public'] as const;
+export type ProfileVisibility = typeof ProfileVisibility[number];
+
 export type Consultant = {
   bio?: string;
   passed_training?: boolean;
@@ -58,18 +70,6 @@ export type UserBase = {
 } & {
   [key in UserProperties]?: string[];
 };
-
-export const UserSpecificProperties = [] as const;
-export type UserSpecificProperties = typeof UserSpecificProperties[number];
-
-export const UserProperties = [
-  ...BaseProperties,
-  ...UserSpecificProperties,
-] as const;
-export type UserProperties = typeof UserProperties[number];
-
-export const ProfileVisibility = ['private', 'public'] as const;
-export type ProfileVisibility = typeof ProfileVisibility[number];
 
 export type WorkHours = {
   [key in DaysOfWeekInStringNumbers]: DayAvailability | null;

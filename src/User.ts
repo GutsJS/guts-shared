@@ -1,3 +1,5 @@
+import * as firebase from 'firebase/app';
+
 import {
   AddressObj,
   BaseProperties,

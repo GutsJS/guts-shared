@@ -5,15 +5,11 @@ import { isBefore } from 'date-fns';
 export const checkCouponValidity = async (
   promotionCode: Stripe.PromotionCode | undefined,
   userDocRef: firebase.firestore.DocumentReference<firebase.firestore.DocumentData>,
-  serviceSlug: string | undefined,
-  devMode: boolean
+  serviceSlug: string | undefined
 ) => {
   if (!promotionCode) {
     throw new Error('No promotion code found');
   } else {
-    if (!promotionCode.livemode && !devMode) {
-      throw new Error('no promotion code found');
-    }
     if (promotionCode.expires_at) {
       // Stripes timestamps are in seconds not milliseconds for some reason
       if (isBefore(new Date(promotionCode.expires_at * 1000), new Date())) {

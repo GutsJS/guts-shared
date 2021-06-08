@@ -15,7 +15,6 @@ export type Consultant = {
   bio?: string;
   passed_training?: boolean;
   price_level: PriceLevels;
-  is_consultant: boolean;
   requires_review?: boolean;
   default_intro_chat_message?: string;
   specialty_skills: { [key in UserProperties]?: string[] };
@@ -40,6 +39,7 @@ export type UserBase = {
   phone_number?: string;
   hubspot_id?: string;
   is_admin?: boolean;
+  is_consultant: boolean;
   stripe_customer_id?: string;
   consultant_private_notes?: string;
   preferred_brands?: string[];

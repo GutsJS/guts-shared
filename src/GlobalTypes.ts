@@ -89,6 +89,7 @@ export type ProductLinkWithoutID = {
   variant?: string;
   retailer?: string;
   skip_scrape_until?: Date;
+  archived?: boolean;
 };
 
 export const Currencies = ['USD', 'GBP'] as const;

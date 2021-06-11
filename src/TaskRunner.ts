@@ -24,6 +24,12 @@ export type WorkerTypes = {
     consultationId: string;
     consultantId: string;
   };
+  'upcoming-consultation-reminder': {
+    daysAfterConsultation: number;
+    clientUserId: string;
+    consultationId: string;
+    consultantId: string;
+  };
   'welcome-email': {
     userId: string;
   };

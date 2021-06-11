@@ -24,4 +24,5 @@ export type WorkerTypes = {
     consultationId: string;
     consultantId: string;
   };
+  'welcome-email': {};
 };

@@ -27,5 +27,6 @@ export const NotificationEvents = [
   'review-created',
   'client-confirmed-product-selection',
   'client-invoice-charged',
+  'upcoming-consultation-reminder',
 ] as const;
 export type NotificationEvents = typeof NotificationEvents[number];

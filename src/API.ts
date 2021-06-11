@@ -44,10 +44,6 @@ export type UpdateCalendarEventRequest = AuthenticatedAPIRequest & {
 };
 
 export type DeleteCalendarEventRequest = AuthenticatedAPIRequest & {
-  calendarEventId: string;
-  consultantId: string;
-  clientId: string;
-  serviceHubspotListId: string | number;
-  serviceHubspotDateFieldName: string | undefined;
-  consultationTime: string;
+  consultation: Consultation;
+  service: Service;
 };

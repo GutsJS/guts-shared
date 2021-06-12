@@ -1,3 +1,4 @@
+import { PriceLevels } from '../GlobalTypes';
 import { Stripe } from 'stripe';
 import firebase from 'firebase';
 import { isBefore } from 'date-fns';
@@ -5,7 +6,8 @@ import { isBefore } from 'date-fns';
 export const checkCouponValidity = async (
   promotionCode: Stripe.PromotionCode | undefined,
   userDocRef: firebase.firestore.DocumentReference<firebase.firestore.DocumentData>,
-  serviceSlug: string | undefined
+  serviceSlug: string | undefined,
+  price_level: PriceLevels
 ) => {
   if (!promotionCode) {
     throw new Error('No promotion code found');
@@ -24,14 +26,15 @@ export const checkCouponValidity = async (
         throw new Error('Promotion Code Expired');
       }
     }
-    if (promotionCode.coupon.max_redemptions) {
-      if (
-        promotionCode.coupon.times_redeemed >
-        promotionCode.coupon.max_redemptions
-      ) {
-        throw new Error('Promotion Code has hit the redeem limit');
-      }
-    }
+    // this doesnt work since you cannot update the times a stripe coupon has been used manually.
+    // if (promotionCode.coupon.max_redemptions) {
+    //   if (
+    //     promotionCode.coupon.times_redeemed >
+    //     promotionCode.coupon.max_redemptions
+    //   ) {
+    //     throw new Error('Promotion Code has hit the redeem limit');
+    //   }
+    // }
     if (promotionCode.restrictions.first_time_transaction) {
       const previousConsultations = await userDocRef
         .collection('consultations')
@@ -46,6 +49,13 @@ export const checkCouponValidity = async (
       promotionCode.metadata.service &&
       serviceSlug &&
       promotionCode.metadata.service !== serviceSlug
+    ) {
+      throw new Error('Promotion Code not valid for this service');
+    }
+    if (
+      promotionCode.metadata.price_level &&
+      price_level &&
+      promotionCode.metadata.price_level !== price_level
     ) {
       throw new Error('Promotion Code not valid for this service');
     }

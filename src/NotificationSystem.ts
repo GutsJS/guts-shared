@@ -20,6 +20,7 @@ export const NotificationEvents = [
   'consultation-scheduled-by-consultant',
   'consultation-scheduled-by-client',
   'consultation-canceled-by-consultant',
+  'skin-profile-published',
   'skin-profile-update',
   'skin-profile-calendar-update',
   'skin-profile-regime-update',

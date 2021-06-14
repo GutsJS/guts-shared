@@ -11,12 +11,13 @@ export type AuthenticatedAPIRequest = APIRequest & {
   idToken: string;
 };
 
-export type NotificationChannels = 'email' | 'in-app';
+export type NotificationChannel = 'email' | 'in-app';
+export type NotificationChannels = NotificationChannel[] | 'all';
 
 export type TriggerNotificationAPIRequest = AuthenticatedAPIRequest & {
   subjectUserId: string;
   notificationEvent: NotificationEvents;
-  channels?: NotificationChannels[];
+  channels?: NotificationChannels;
   dynamicData?: {
     [key: string]: any;
   };

@@ -11,7 +11,7 @@ export type SkinProfile = {
   publishedAt?: firestore.Timestamp;
   createdAt: firestore.Timestamp | null;
   updatedAt: firestore.Timestamp | null;
-  updateCount: number | null;
+  updateCount: number | null; // intended to ensure sequential saving and also to measure save counts so we can approach versioning as a feature in the future
   skinProfileBlocks: BasicBlockType[];
   regimenBlocks: BasicBlockType[];
 };

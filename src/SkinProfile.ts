@@ -9,6 +9,9 @@ export type SkinProfile = {
   regimen: SkincareRegimen; // @TODO remove LIO-256
   shoppingCartConfirmed: boolean;
   publishedAt?: firestore.Timestamp;
+  createdAt: firestore.Timestamp | null;
+  updatedAt: firestore.Timestamp | null;
+  updateCount: number | null;
   skinProfileBlocks: BasicBlockType[];
   regimenBlocks: BasicBlockType[];
 };

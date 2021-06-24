@@ -80,6 +80,8 @@ export type BasicBlockTypeForDatabase = {
   variation?: 1 | 2 | 3;
   paddingTop?: number;
   paddingBottom?: number;
+  // TODO proper type checking for component block types
+  options?: { [key: string]: any };
 };
 
 export type DefaultBlockListableType = {

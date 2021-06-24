@@ -15,3 +15,13 @@ export type SkinProfile = {
   skinProfileBlocks: BasicBlockType[];
   regimenBlocks: BasicBlockType[];
 };
+
+export type SkinProfileTemplate = {
+  name: string;
+  id: string;
+  updatedAt: firestore.Timestamp;
+  createdAt: firestore.Timestamp;
+  skinProfileBlocks: BasicBlockType[];
+  deletedAt: firestore.Timestamp;
+  visible: boolean;
+};

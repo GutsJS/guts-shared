@@ -1,13 +1,5 @@
 import { Node } from 'slate';
-import { firestore } from 'firebase';
 import { v4 as uuid } from 'uuid';
-
-export type ConsultationComponents = {
-  version: 'live' | 'draft';
-  publishedAt?: firestore.Timestamp;
-  overview: BasicBlockType[];
-  skincare_regimen: BasicBlockType[];
-};
 
 export type ConsultationComponentBlock = BasicBlockType;
 
@@ -17,8 +9,11 @@ export const ConsltationComponentGroups = [
   'Dividers',
   'Non-Editable',
 ] as const;
-export type ConsltationComponentGroups = typeof ConsltationComponentGroups[number];
+export type ConsltationComponentGroups =
+  typeof ConsltationComponentGroups[number];
 
+// TODO refactor how these blocks are structured... dont need classes anymore
+// Idea - allow admins to create/set predefined blocks to be used on skin profile templates.
 export class BasicBlock implements BasicBlockType {
   id = '';
   group: ConsltationComponentGroups = 'Blank';
@@ -30,6 +25,8 @@ export class BasicBlock implements BasicBlockType {
   paddingTop?: number;
   paddingBottom?: number;
   previewHeight: number = 250;
+  // TODO proper type checking for component block types
+  options?: { [key: string]: any };
 
   constructor() {
     this.id = uuid();
@@ -46,11 +43,13 @@ export class BasicBlock implements BasicBlockType {
       variation,
       paddingTop,
       paddingBottom,
+      options,
     } = this;
     return {
       id,
       group,
       title,
+      ...(options && { options }),
       ...(column1Nodes && { column1Nodes }),
       ...(column2Nodes && { column2Nodes }),
       ...(column3Nodes && { column3Nodes }),

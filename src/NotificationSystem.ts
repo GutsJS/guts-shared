@@ -17,6 +17,7 @@ export type SystemNotification = {
 export const NotificationEvents = [
   'user-given-consultant-access',
   'user-consultant-access-revoked',
+  'consultation-updated',
   'consultation-scheduled-by-consultant',
   'consultation-scheduled-by-client',
   'consultation-canceled-by-consultant',

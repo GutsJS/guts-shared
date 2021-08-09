@@ -1,6 +1,6 @@
 {
   "name": "@tyleraholden/lionne-shared",
-  "version": "2.3.44",
+  "version": "2.4.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "UNLICENSED",

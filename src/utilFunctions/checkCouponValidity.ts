@@ -46,14 +46,14 @@ export const checkCouponValidity = async (
       }
     }
     if (
-      promotionCode.metadata.service &&
+      promotionCode?.metadata?.service &&
       serviceSlug &&
       promotionCode.metadata.service !== serviceSlug
     ) {
       throw new Error('Promotion Code not valid for this service');
     }
     if (
-      promotionCode.metadata.price_level &&
+      promotionCode?.metadata?.price_level &&
       price_level &&
       promotionCode.metadata.price_level !== price_level
     ) {

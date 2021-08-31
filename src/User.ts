@@ -55,8 +55,6 @@ export type UserBase = {
   address?: AddressObj;
   openInvoice?: firebase.firestore.DocumentReference;
   liveSkinProfile?: firebase.firestore.DocumentReference;
-  membershipStartDate?: firebase.firestore.Timestamp;
-  membershipMonths?: number;
   forceLogout?: boolean;
   createdAt?: firebase.firestore.Timestamp;
   heardAboutFrom?: string;

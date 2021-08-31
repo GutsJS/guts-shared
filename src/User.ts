@@ -51,6 +51,7 @@ export type UserBase = {
   time_zone?: string;
   last_login?: firebase.firestore.Timestamp;
   next_consultation_ref: firebase.firestore.DocumentReference;
+  next_consultation_time?: firebase.firestore.Timestamp;
   profile_visibility?: ProfileVisibility;
   address?: AddressObj;
   openInvoice?: firebase.firestore.DocumentReference;

@@ -4,6 +4,7 @@ export type SystemNotification = {
   object: string;
   time: string;
   customMessage: string;
+  slackChannel?: SlackChannels;
   emojiIcon: string;
   routerLink?: string;
   requireCheck?: boolean;
@@ -13,6 +14,15 @@ export type SystemNotification = {
     | boolean
     | { template: string; dynamicData: { [key: string]: string } };
 };
+
+type SlackChannels =
+  | 'deploy_notifications'
+  | 'website_contact_form'
+  | 'weekly_platform_statistics'
+  | 'sms_number'
+  | 'platform_notifications'
+  | 'onboarding_lead'
+  | 'order_notification';
 
 export const NotificationEvents = [
   'user-given-consultant-access',

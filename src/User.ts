@@ -21,6 +21,7 @@ export type Consultant = {
   average_rating?: number;
   work_hours: WorkHours;
   minimumAvailabilityNoticeInHours?: number;
+  maximumConsultationsPerDay?: number;
 } & UserBase;
 
 export type User = Partial<Client> & Partial<Consultant>;

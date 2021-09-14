@@ -14,6 +14,7 @@ export type SkinProfile = {
   updateCount: number | null; // intended to ensure sequential saving and also to measure save counts so we can approach versioning as a feature in the future
   skinProfileBlocks: BasicBlockType[];
   regimenBlocks: BasicBlockType[];
+  sessionType: 'Initial' | 'Follow Up' | undefined;
 };
 
 export type SkinProfileTemplate = {

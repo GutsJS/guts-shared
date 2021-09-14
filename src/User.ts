@@ -56,7 +56,7 @@ export type UserBase = {
   profile_visibility?: ProfileVisibility;
   address?: AddressObj;
   openInvoice?: firebase.firestore.DocumentReference;
-  liveSkinProfile?: firebase.firestore.DocumentReference;
+  currentSkinProfile?: firebase.firestore.DocumentReference;
   forceLogout?: boolean;
   createdAt?: firebase.firestore.Timestamp;
   heardAboutFrom?: string;

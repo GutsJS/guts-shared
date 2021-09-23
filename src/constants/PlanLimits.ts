@@ -1,5 +1,5 @@
 import { SitePlans } from '..';
-import { UsageDoc } from '../types/UsageDoc';
+import { SiteUsageDoc } from '../types/SiteUsageDoc';
 
 export const PLAN_LIMITS: PlanLimitsConstant = {
   free: {
@@ -11,7 +11,7 @@ export const PLAN_LIMITS: PlanLimitsConstant = {
 };
 
 type PlanLimitsConstant = {
-  [key in SitePlans]: UsageDoc & {
+  [key in SitePlans]: SiteUsageDoc & {
     totalElements: number;
     pathsPerElement: number;
   };

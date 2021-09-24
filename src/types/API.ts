@@ -1,38 +1,32 @@
 import { SiteData } from '..';
 
 export type APIError = {
-  message: string;
+  errMsg: string;
 };
-
-export type SaveSiteDataRequest = {
-  token: string;
-  siteData: SiteData;
-};
-
-export type SaveSiteDataResponse = {
-  success: boolean;
-  siteData: SiteData;
-};
-
-export type GetSiteDataRequest = {
-  token: string;
-  siteId: string;
-};
-
-export type GetSiteDataResponse = {
-  success: boolean;
-  siteData: SiteData;
-};
-
-export type PublicRequests = 'saveSiteData' | 'getSiteData';
 
 export type APIRequests = {
   getSiteData: {
-    request: GetSiteDataRequest;
-    response: APIError | GetSiteDataResponse;
+    request: {
+      token: string;
+      siteId: string;
+    };
+    response:
+      | APIError
+      | {
+          success: boolean;
+          siteData: SiteData;
+        };
   };
   saveSiteData: {
-    request: SaveSiteDataRequest;
-    response: APIError | SaveSiteDataResponse;
+    request: {
+      token: string;
+      siteData: SiteData;
+    };
+    response:
+      | APIError
+      | {
+          success: boolean;
+          siteData: SiteData;
+        };
   };
 };

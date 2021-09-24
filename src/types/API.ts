@@ -26,15 +26,13 @@ export type GetSiteDataResponse = {
 
 export type PublicRequests = 'saveSiteData' | 'getSiteData';
 
-export type APIRequests<RequestName = PublicRequests> =
-  RequestName extends 'saveSiteData'
-    ? {
-        request: SaveSiteDataRequest;
-        response: APIError | SaveSiteDataResponse;
-      }
-    : RequestName extends 'getSiteData'
-    ? {
-        request: GetSiteDataRequest;
-        response: APIError | GetSiteDataResponse;
-      }
-    : never;
+export type APIRequests = {
+  getSiteData: {
+    request: GetSiteDataRequest;
+    response: APIError | GetSiteDataResponse;
+  };
+  saveSiteData: {
+    request: SaveSiteDataRequest;
+    response: APIError | SaveSiteDataResponse;
+  };
+};

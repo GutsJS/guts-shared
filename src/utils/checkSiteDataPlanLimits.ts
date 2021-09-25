@@ -1,7 +1,5 @@
 import { GutsElement, PLAN_LIMITS, SiteData } from '..';
 
-import { DOCUMENTATION_LINK } from '../constants/documentationLinks';
-
 export const checkElementLimit = (siteData: SiteData): boolean => {
   return (
     Object.keys(siteData.elements).length >
@@ -38,7 +36,7 @@ export const checkSiteDataPlanLimits = (
   const overElementLimit = checkElementLimit(siteData);
   const overElementPathLimit = checkAllElementsPathLimit(siteData);
 
-  if (!overElementLimit || !overElementPathLimit) {
+  if (overElementLimit || overElementPathLimit) {
     return `You have reached the maximum ${overElementLimit ? 'element' : ''}${
       overElementLimit && overElementPathLimit ? ' & ' : ''
     }${overElementLimit ? 'paths' : ''} limit for the ${

@@ -7,20 +7,20 @@ export const checkElementLimit = (siteData: SiteData): boolean => {
   );
 };
 
-export const checkAllElementsPathLimit = (
+export const checkAllElementsRouteLimit = (
   siteData: SiteData
 ): false | GutsElement[] => {
   const elementsWithIssue = Object.keys(siteData.elements)
-    .map((el) => checkElementPathLimit(siteData.elements[el], siteData.plan))
+    .map((el) => checkElementRouteLimit(siteData.elements[el], siteData.plan))
     .filter(Boolean) as GutsElement[];
   return elementsWithIssue.length ? elementsWithIssue : false;
 };
 
-export const checkElementPathLimit = (
+export const checkElementRouteLimit = (
   element: GutsElement,
   plan: SiteData['plan']
 ) => {
-  return element.paths.length > PLAN_LIMITS[plan].pathsPerElement
+  return element.routes.length > PLAN_LIMITS[plan].routesPerElement
     ? element
     : false;
 };
@@ -34,12 +34,12 @@ export const checkSiteDataPlanLimits = (
   siteData: SiteData
 ): string | undefined => {
   const overElementLimit = checkElementLimit(siteData);
-  const overElementPathLimit = checkAllElementsPathLimit(siteData);
+  const overElementRouteLimit = checkAllElementsRouteLimit(siteData);
 
-  if (overElementLimit || overElementPathLimit) {
+  if (overElementLimit || overElementRouteLimit) {
     return `You have reached the maximum ${overElementLimit ? 'element' : ''}${
-      overElementLimit && overElementPathLimit ? ' & ' : ''
-    }${overElementLimit ? 'paths' : ''} limit for the ${
+      overElementLimit && overElementRouteLimit ? ' & ' : ''
+    }${overElementLimit ? 'routes' : ''} limit for the ${
       siteData.plan
     } plan. Upgrade for more allowance. Refer to our pricing page for more info: https://gutsjs.com/pricing`;
   }

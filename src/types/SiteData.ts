@@ -26,20 +26,20 @@ export const SitePlans = [
 export type SitePlans = typeof SitePlans[number];
 
 export type GutsElement = {
-  paths: PathData[];
+  routes: Route[];
   html: string;
 };
 
-export type PathData = {
+export type Route = {
   slug: string;
   manual?: true;
   // unused?: boolean;
   exclude?: true;
 };
 
-export type GutsDynamicPathDocument = {
-  dynamicPath: string;
-  filledPath: string; // TODO rename this - hydratedPath?
+export type GutsDynamicRouteDocument = {
+  dynamicRoute: string;
+  filledRoute: string; // TODO rename this - hydratedRoute?
   published: boolean;
   gutsAPIVersion?: string;
   created_at: Timestamp;

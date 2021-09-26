@@ -20,7 +20,8 @@ export const checkElementRouteLimit = (
   element: GutsElement,
   plan: SiteData['plan']
 ) => {
-  return element.routes.length > PLAN_LIMITS[plan].routesPerElement
+  return element?.routes?.length &&
+    element.routes.length > PLAN_LIMITS[plan].routesPerElement
     ? element
     : false;
 };
@@ -33,6 +34,7 @@ export const checkElementRouteLimit = (
 export const checkSiteDataPlanLimits = (
   siteData: SiteData
 ): string | undefined => {
+  if (!siteData?.elements) return undefined;
   const overElementLimit = checkElementLimit(siteData);
   const overElementRouteLimit = checkAllElementsRouteLimit(siteData);
 

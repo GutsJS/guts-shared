@@ -3,7 +3,7 @@
   "version": "0.0.12",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "license": "UNLICENSED",
+  "license": "license.md",
   "repository": "git://git@github.com:GutsJS/guts-shared",
   "files": [
     "dist"

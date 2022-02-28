@@ -6,5 +6,4 @@ export * from './types/User';
 export * from './constants/documentationLinks';
 export * from './constants/PlanLimits';
 
-import './css/colors.scss';
 export * from './utils/checkSiteDataPlanLimits';

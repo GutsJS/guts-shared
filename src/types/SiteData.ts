@@ -18,11 +18,7 @@ export type TrimmableSiteData = {
   deleted_at?: Timestamp;
 };
 
-export const SitePlans = [
-  'free',
-  // 'basic',
-  // 'premium',
-] as const;
+export const SitePlans = ['free', 'basic', 'premium'] as const;
 export type SitePlans = typeof SitePlans[number];
 
 export type GutsElement = {

@@ -8,6 +8,18 @@ export const PLAN_LIMITS: PlanLimitsConstant = {
     totalElements: 20,
     routesPerElement: 20,
   },
+  basic: {
+    reads: 3000,
+    writes: 300,
+    totalElements: 20,
+    routesPerElement: 20,
+  },
+  premium: {
+    reads: 10000,
+    writes: 1000,
+    totalElements: 200,
+    routesPerElement: 200,
+  },
 };
 
 type PlanLimitsConstant = {

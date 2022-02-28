@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+.guts-scope {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  * {
+    line-height: 120%;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--guts-color-white);
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  h2 {
+    font-family: 'Fira Mono', monospace;
+    color: var(--guts-color-text);
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-family: 'Fira Mono', monospace;
+    color: var(--guts-color-text);
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  h4 {
+    font-family: 'Fira Mono', monospace;
+    color: var(--guts-color-text);
+    font-size: 18px;
+    font-weight: 400;
+    small {
+      font-size: 14px;
+    }
+  }
+
+  h5 {
+    font-family: 'Roboto', monospace;
+    color: var(--guts-color-heading);
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  h6 {
+    font-family: 'Roboto', monospace;
+    color: var(--guts-color-heading);
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  p {
+    color: var(--guts-color-text);
+    font-family: 'Fira Mono', monospace;
+  }
+
+  .path-root-title {
+    color: var(--guts-color-blue);
+    span {
+      color: var(--guts-color-text);
+    }
+    .muted {
+      opacity: 0.5;
+    }
+    &.highlight-slug {
+      color: rgba(98, 175, 239, 0.7);
+      span {
+        opacity: 0.5;
+        color: var(--guts-color-text);
+      }
+      .muted {
+        opacity: 1;
+      }
+    }
+  }
+}

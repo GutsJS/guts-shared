@@ -9,26 +9,19 @@ export type SiteUserData = {
 
 export type TransformedUser = DBUser & {
   id: string;
-  formattedName?: string;
+  readonly formattedName: string;
 };
 
 export const transformUser = async (rawDoc: any) => {
   const userObj: TransformedUser = {
     id: rawDoc.id,
     ...(rawDoc.data() as DBUser),
+    get formattedName() {
+      return `${this.firstName ? this.firstName + ' ' : ''}${
+        this.lastName ? this.lastName : ''
+      }`;
+    },
   };
 
-  userObj.formattedName = getFormattedName(
-    userObj?.firstName,
-    userObj?.lastName
-  );
-
   return userObj;
-};
-
-export const getFormattedName = (
-  firstName: string | undefined,
-  lastName: string | undefined
-) => {
-  return `${firstName ? firstName + ' ' : ''}${lastName ? lastName : ''}`;
 };

@@ -1,6 +1,7 @@
 export type DBUser = {
   firstName?: string;
   lastName?: string;
+  sites?: string[];
 };
 
 export type SiteUserData = {

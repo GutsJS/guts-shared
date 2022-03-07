@@ -1,5 +1,17 @@
 import { Timestamp } from './Timestamp';
 
+// @TODO this is getting more out of hand than i thought,
+// might be worth refactoring these with Pick and Partial functions for readability.
+export type SiteDataDatabaseDoc = {
+  plan: SitePlans;
+  name: string;
+  deleted_at?: Timestamp;
+};
+
+export type SiteDataDoc = SiteDataDatabaseDoc & {
+  id: string;
+};
+
 export type SiteData = TrimmableSiteData & NonTrimmableSiteData;
 
 export type NonTrimmableSiteData = {
@@ -10,12 +22,9 @@ export type NonTrimmableSiteData = {
   };
 };
 
-export type TrimmableSiteData = {
-  plan: SitePlans;
-  name: string;
+export type TrimmableSiteData = SiteDataDatabaseDoc & {
   created_at: Timestamp;
   updated_at: Timestamp;
-  deleted_at?: Timestamp;
 };
 
 export const SitePlans = ['free', 'basic', 'premium'] as const;

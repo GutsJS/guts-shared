@@ -72,3 +72,12 @@ export const TrimmableSiteDataObj: KeysEnum<TrimmableSiteData> = {
   updated_at: true,
   deleted_at: true,
 };
+
+export const transformSiteData = async (rawDoc: any) => {
+  const siteDataObj: SiteDataDoc = {
+    id: rawDoc.id,
+    ...(rawDoc.data() as SiteDataDatabaseDoc),
+  };
+
+  return siteDataObj;
+};

@@ -4,9 +4,13 @@ export type DBUser = {
   sites?: string[];
 };
 
-export type SiteUserData = {
+export type SiteMemberData = {
   role: 'owner' | 'admin' | 'member';
   name: string;
+};
+
+export type TransformedSiteMemberData = SiteMemberData & {
+  id: string;
 };
 
 export type TransformedUser = DBUser & {

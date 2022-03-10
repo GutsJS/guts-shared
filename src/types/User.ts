@@ -5,7 +5,7 @@ export type DBUser = {
 };
 
 export type SiteMemberData = {
-  role: 'owner' | 'admin' | 'member';
+  role: 'owner' | 'admin' | 'editor';
   name: string;
 };
 

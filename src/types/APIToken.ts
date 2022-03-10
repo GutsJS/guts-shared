@@ -3,6 +3,7 @@ export type APIToken = {
   token: string;
 };
 
-export type TransformedAPIToken = APIToken & {
+export type TransformedAPIToken = {
   id: string;
+  name: string;
 };

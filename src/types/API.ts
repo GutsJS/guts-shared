@@ -8,6 +8,7 @@ export type APIRequests = {
   getSiteData: {
     request: {
       readOnlyToken?: string;
+      readOnlyTokenId?: string;
       idToken?: string;
       siteId: string;
     };

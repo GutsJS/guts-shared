@@ -7,9 +7,8 @@ export type APIError = {
 export type APIRequests = {
   getSiteData: {
     request: {
-      readOnlyToken?: string;
-      readOnlyTokenId?: string;
-      idToken?: string;
+      tokenType?: 'idToken' | 'readOnly';
+      token?: string;
       siteId: string;
     };
     response:

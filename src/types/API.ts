@@ -1,7 +1,7 @@
 import { SiteData } from '..';
 
 export type APIError = {
-  errMsg: string;
+  error_msg: string;
 };
 
 export type APIRequests = {

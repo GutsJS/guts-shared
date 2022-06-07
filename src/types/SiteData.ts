@@ -6,6 +6,8 @@ export type SiteDataDatabaseDoc = {
   plan: SitePlans;
   name: string;
   deleted_at?: Timestamp;
+  created_at: Timestamp;
+  updated_at: Timestamp;
 };
 
 export type SiteDataDoc = SiteDataDatabaseDoc & {
@@ -22,10 +24,10 @@ export type NonTrimmableSiteData = {
   };
 };
 
-export type TrimmableSiteData = SiteDataDatabaseDoc & {
-  created_at: Timestamp;
-  updated_at: Timestamp;
-};
+export type TrimmableSiteData = Pick<
+  SiteDataDatabaseDoc,
+  'created_at' | 'updated_at' | 'plan' | 'name' | 'deleted_at'
+>;
 
 export const SitePlans = ['free', 'basic', 'premium'] as const;
 export type SitePlans = typeof SitePlans[number];

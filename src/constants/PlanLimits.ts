@@ -23,7 +23,7 @@ export const PLAN_LIMITS: PlanLimitsConstant = {
 };
 
 type PlanLimitsConstant = {
-  [key in SitePlans]: SiteUsageDoc & {
+  [key in SitePlans]: Omit<SiteUsageDoc, 'createdAt'> & {
     totalElements: number;
     routesPerElement: number;
   };

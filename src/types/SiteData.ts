@@ -29,7 +29,7 @@ export type TrimmableSiteData = Pick<
   'created_at' | 'updated_at' | 'plan' | 'name' | 'deleted_at'
 >;
 
-export const SitePlans = ['free', 'basic', 'premium'] as const;
+export const SitePlans = ['free', 'basic', 'premium', 'enterprise'] as const;
 export type SitePlans = typeof SitePlans[number];
 
 export type GutsElement = {

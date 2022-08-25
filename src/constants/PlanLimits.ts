@@ -5,7 +5,7 @@ export const PLAN_LIMITS: PlanLimitsConstant = {
   free: {
     reads: 1000,
     writes: 100,
-    totalElements: 20,
+    totalElements: 15,
     routesPerElement: 20,
     siteMembers: 2,
     allowsHistory: false,
@@ -14,7 +14,7 @@ export const PLAN_LIMITS: PlanLimitsConstant = {
   basic: {
     reads: 3000,
     writes: 300,
-    totalElements: 20,
+    totalElements: 50,
     routesPerElement: 20,
     siteMembers: 5,
     allowsHistory: true,
@@ -26,6 +26,15 @@ export const PLAN_LIMITS: PlanLimitsConstant = {
     totalElements: 200,
     routesPerElement: 200,
     siteMembers: 10,
+    allowsHistory: true,
+    hiddenBadge: true,
+  },
+  enterprise: {
+    reads: 30000,
+    writes: 3000,
+    totalElements: 1000,
+    routesPerElement: 1000,
+    siteMembers: 20,
     allowsHistory: true,
     hiddenBadge: true,
   },

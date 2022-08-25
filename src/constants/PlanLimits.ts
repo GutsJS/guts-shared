@@ -31,12 +31,14 @@ export const PLAN_LIMITS: PlanLimitsConstant = {
   },
 };
 
+type SiteLimits = Omit<SiteUsageDoc, 'createdAt'> & {
+  totalElements: number;
+  routesPerElement: number;
+  siteMembers: number;
+  allowsHistory: boolean;
+  hiddenBadge: boolean;
+};
+
 type PlanLimitsConstant = {
-  [key in SitePlans]: Omit<SiteUsageDoc, 'createdAt'> & {
-    totalElements: number;
-    routesPerElement: number;
-    siteMembers: number;
-    allowsHistory: boolean;
-    hiddenBadge: boolean;
-  };
+  [key in SitePlans]: SiteLimits;
 };
